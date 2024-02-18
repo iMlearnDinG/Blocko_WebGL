@@ -58,7 +58,7 @@
       var loaderUrl = buildUrl + "/WebGL_Client.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/d64fc3ce0dd0298a27a77d8018e05b67.data.unityweb",
+        dataUrl: buildUrl + "/245fd958a4acb18f2d1cfc0110298203.data.unityweb",
         frameworkUrl: buildUrl + "/b30994950ff219fb886061e157910d74.js.unityweb",
         codeUrl: buildUrl + "/8534a36e3a65cc7a2932f509e11ed088.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
@@ -124,24 +124,6 @@
 
       document.body.appendChild(script);
 
-      // Suppress specific console warnings and errors
-    (function() {
-      var originalConsoleWarn = console.warn;
-      var originalConsoleError = console.error;
-      var suppressedMessage = "Setting linear velocity of a kinematic body is not supported";
-
-      console.warn = function (message) {
-        if (!message.includes(suppressedMessage)) {
-          originalConsoleWarn.apply(console, arguments);
-        }
-      };
-
-      console.error = function (message) {
-        if (!message.includes(suppressedMessage)) {
-          originalConsoleError.apply(console, arguments);
-        }
-      };
-    })();
     </script>
   </body>
 </html>
