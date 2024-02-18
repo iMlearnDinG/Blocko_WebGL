@@ -124,6 +124,24 @@
 
       document.body.appendChild(script);
 
+      // Suppress specific console warnings and errors
+      (function() {
+        var originalConsoleWarn = console.warn;
+        var originalConsoleError = console.error;
+        var suppressedMessage = "Setting linear velocity of a kinematic body is not supported";
+  
+        console.warn = function (message) {
+          if (!message.includes(suppressedMessage)) {
+            originalConsoleWarn.apply(console, arguments);
+          }
+        };
+  
+        console.error = function (message) {
+          if (!message.includes(suppressedMessage)) {
+            originalConsoleError.apply(console, arguments);
+          }
+        };
+      })();
     </script>
   </body>
 </html>
