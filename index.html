@@ -55,12 +55,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL_Client.loader.js";
+      var loaderUrl = buildUrl + "/Builds.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/99351875d582f2a72172a64c064e9715.data.unityweb",
-        frameworkUrl: buildUrl + "/7fb1a3613ca638533305ef271d38f947.js.unityweb",
-        codeUrl: buildUrl + "/f68af7263669a1e4a7102f81d8131da8.wasm.unityweb",
+        dataUrl: buildUrl + "/1441ea62600b4d4d73b9a04d4f086e00.data.unityweb",
+        frameworkUrl: buildUrl + "/ac679e433071bcb42d755d3ff4d96ff5.js.unityweb",
+        codeUrl: buildUrl + "/00bd8fcf05749f71618c495578f8a502.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SnipShotMedia",
         productName: "Blocko",
@@ -124,24 +124,6 @@
 
       document.body.appendChild(script);
 
-      // Suppress specific console warnings and errors
-    (function() {
-      var originalConsoleWarn = console.warn;
-      var originalConsoleError = console.error;
-      var suppressedMessage = "Setting linear velocity of a kinematic body is not supported";
-
-      console.warn = function (message) {
-        if (!message.includes(suppressedMessage)) {
-          originalConsoleWarn.apply(console, arguments);
-        }
-      };
-
-      console.error = function (message) {
-        if (!message.includes(suppressedMessage)) {
-          originalConsoleError.apply(console, arguments);
-        }
-      };
-    })();
     </script>
   </body>
 </html>
